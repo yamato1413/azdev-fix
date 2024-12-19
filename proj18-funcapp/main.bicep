@@ -24,7 +24,10 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   sku: {
     name: 'Standard_LRS'
   }
-
+  properties: {
+    allowBlobPublicAccess: true
+  }
+  
   // Blobサービス
   resource blobService 'blobServices' = {
     name: 'default'
